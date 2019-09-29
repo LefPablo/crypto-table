@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
-<script src = 'code.js'></script>
 <head>
+    <script src = 'viewTable.js'></script>
     <meta charset="UTF-8">
     <style type="text/css">
         .scroll-table {
@@ -21,9 +21,9 @@
         }
     </style>
 </head>
-<body class="container" onload="table()">
+<body class="container" onload="tableUp()">
 <div class="jumbotron">
-    <button type="button" onClick='location.href="http://localhost:3012/custom.html"'>Добавить запись</button>
+    <button type="button" onClick='location.href="http://localhost:8080/custom.html"'>Добавить запись</button>
     <div id="table" class="scroll-table">
 
     </div>

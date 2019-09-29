@@ -1,14 +1,14 @@
-var Rates = require('../models/rates');
+const Rates = require('../models/rates');
 
-exports.all = function (req, res) {
-    Rates.all(function (err, docs) {
+exports.rates = function (req, res) {
+    Rates.rates(function (err, docs) {
         if (err) {
             console.log(err);
             return res.sendStatus(500);
         }
         res.send(docs);
     })
-}
+};
 
 exports.symbols = function (req, res) {
     Rates.symbols(function (err, docs) {
@@ -18,17 +18,7 @@ exports.symbols = function (req, res) {
         }
         res.send(docs);
     })
-}
-
-exports.findById = function (req, res) {
-    Rates.findById(req.params.id, function (err, doc) {
-        if (err) {
-            console.log(err);
-            return res.sendStatus(500);
-        }
-        res.send(doc);
-    })
-}
+};
 
 exports.create = function (req, res) {
     console.log(req.body);
@@ -43,9 +33,9 @@ exports.create = function (req, res) {
             console.log(err);
             return res.sendStatus(500);
         }
-        console.log(200);
+        res.sendStatus(200);
     })
-}
+};
 
 exports.update = function (req, res) {
     Rates.update(req.params.id, { name: req.body.name }, function (err, result) {
@@ -55,7 +45,7 @@ exports.update = function (req, res) {
         }
         res.sendStatus(200);
     })
-}
+};
 
 exports.delete = function (req, res) {
     Rates.delete(req.params.id, function (err, result) {
@@ -65,24 +55,24 @@ exports.delete = function (req, res) {
         }
         res.sendStatus(200);
     })
-}
+};
 
-exports.deleteAll = function (req, res) {
-    Rates.deleteAll(function (err, result) {
+exports.deleteAllRates = function (req, res) {
+    Rates.deleteAllRates(function (err, result) {
         if (err) {
             console.log(err);
             return res.sendStatus(500);
         }
         res.sendStatus(200);
     })
-}
+};
 
-exports.deleteAllsymbols = function (req, res) {
-    Rates.deleteAllsymbols(function (err, result) {
+exports.deleteAllSymbols = function (req, res) {
+    Rates.deleteAllSymbols(function (err, result) {
         if (err) {
             console.log(err);
             return res.sendStatus(500);
         }
         res.sendStatus(200);
     })
-}
+};
