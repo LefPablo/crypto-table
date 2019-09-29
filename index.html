@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<script src = 'code.js'></script>
+<head>
+    <meta charset="UTF-8">
+    <style type="text/css">
+        .scroll-table {
+            width: 300px;
+            overflow: auto;
+            height: 800px;
+        }
+        .scroll-table table {
+            border-collapse: collapse;
+        }
+        .scroll-table td {
+            padding: 5px;
+        }
+        .scroll-table th {
+            background: #eee;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body class="container" onload="table()">
+<div class="jumbotron">
+    <button type="button" onClick='location.href="http://localhost:3012/custom.html"'>Добавить запись</button>
+    <div id="table" class="scroll-table">
+
+    </div>
+</div>
+</body>
+</html>

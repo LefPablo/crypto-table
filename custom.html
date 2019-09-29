@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src = 'list.js'></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="upSelect()">
+    <form id="form" action="/rates" method="post">
+        <table>
+            <tr>
+                <td>
+                    <select id="selectSymbol" name="symbol">
+
+                    </select>
+                </td>
+                <td>
+                    <input type="text" name="rate" placeholder="Укажите курс" required/>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button type="submit">Отправить</button>
+                    <button type="reset">Отмена</button>
+                </td>
+            </tr>
+        </table>
+        <p>
+            <button type="button" onClick='location.href="http://localhost:3012/index.html"'>Назад</button>
+        </p>
+    </form>
+</body>
+</html>
