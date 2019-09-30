@@ -1,5 +1,15 @@
 const Rates = require('../models/rates');
 
+exports.table = function (req, res) {
+    Rates.table(function (err, docs) {
+        if (err) {
+            console.log(err);
+            return res.sendStatus(500);
+        }
+        res.send(docs);
+    })
+};
+
 exports.rates = function (req, res) {
     Rates.rates(function (err, docs) {
         if (err) {

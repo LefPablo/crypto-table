@@ -15,6 +15,8 @@ app.get('/', function (req, res) {
     res.sendFile('index.html' , { root : __dirname}); //get main page by request to server
 });
 
+app.get('/table', controller.table); //return table symbols and rates
+
 app.get('/symbols', controller.symbols); //return table of symbols
 
 app.get('/rates', controller.rates); //return table of rates

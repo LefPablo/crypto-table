@@ -3,6 +3,7 @@
 <head>
     <script src = 'viewSelect.js'></script>
     <script src = 'action.js'></script>
+    <link rel="stylesheet" href="custom.css">
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
@@ -11,25 +12,31 @@
         <table>
             <tr>
                 <td>
-                    <select id="selectSymbol" name="symbol">
+                    <button id="back" type="button" onClick='location.href="http://localhost:8080/index.html"'>Назад</button>
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>
+                                <select id="selectSymbol" name="symbol">
 
-                    </select>
-                </td>
-                <td>
-                    <input type="text" name="rate" placeholder="Укажите курс" required/>
-                </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>
-                    <button type="button" onclick="createRate()">Отправить</button>
-                    <button type="reset">Отмена</button>
+                                </select>
+                            </td>
+                            <td>
+                                <input type="text" name="rate" placeholder="Укажите курс" required/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <button id="send" type="button" onclick="createRate()">Отправить</button>
+                                <button id="reset" type="reset">Отмена</button>
+                            </td>
+                        </tr>
+                    </table>
                 </td>
             </tr>
         </table>
-        <p>
-            <button type="button" onClick='location.href="http://localhost:8080/index.html"'>Назад</button>
-        </p>
     </form>
 </body>
 </html>

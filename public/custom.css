@@ -1,0 +1,17 @@
+form {
+    margin-top: 50px;
+    margin-left: 50px;
+    background: #eee;
+}
+
+#back {
+    height: 56px;
+}
+
+#send {
+    width: 85px;
+}
+
+#reset {
+    width: 85px;
+}

@@ -49,10 +49,13 @@ MongoClient.connect(url, { useNewUrlParser: true , useUnifiedTopology: true }, f
                     }
                 });
                 var currency = {
-                    _id: json['symbol'],
-                    id_rate: rate._id,
-                    last: json['last']
+                    symbol: json['symbol'],
                 };
+                // var currency = {
+                //     _id: json['symbol'],
+                //     id_rate: rate._id,
+                //     last: json['last']
+                // };
                 db.collection('symbols').insertOne(currency, function (err, result) {
                     if (err) {
                         console.log(err);

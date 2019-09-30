@@ -3,27 +3,13 @@
 <head>
     <script src = 'viewTable.js'></script>
     <meta charset="UTF-8">
-    <style type="text/css">
-        .scroll-table {
-            width: 300px;
-            overflow: auto;
-            height: 800px;
-        }
-        .scroll-table table {
-            border-collapse: collapse;
-        }
-        .scroll-table td {
-            padding: 5px;
-        }
-        .scroll-table th {
-            background: #eee;
-            padding: 5px;
-        }
-    </style>
+    <link rel="stylesheet" href="table.css">
 </head>
-<body class="container" onload="tableUp()">
-<div class="jumbotron">
-    <button type="button" onClick='location.href="http://localhost:8080/custom.html"'>Добавить запись</button>
+<body class="container" onload="tableUp()" a>
+<div class="mainColumn">
+    <div id="button">
+        <button type="button" onClick='location.href="http://localhost:8080/custom.html"'>Добавить запись</button>
+    </div>
     <div id="table" class="scroll-table">
 
     </div>

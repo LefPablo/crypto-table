@@ -3,7 +3,7 @@ function tableUp() {
 
     xhr.open(
         'GET',
-        'http://localhost:8080/symbols',
+        'http://localhost:8080/table',
         true
     );
 
@@ -18,10 +18,16 @@ function tableUp() {
             a = JSON.parse(xhr.response);
             var htmlData = '<table width="97%"><tbody>';
             htmlData += '<thead><tr><th>Name</th><th>Course</th></tr></thead>';
+            b = 0;
             a.forEach(function (json) { // create table of symbols and rates
-                htmlData += '<tr>';
+                if (b == 1) {
+                    b--;
+                } else {
+                    b++;
+                }
+                htmlData += ('<tr ' + 'class="tr' + b + '">');
                 htmlData += '<td>';
-                htmlData += json['_id'];
+                htmlData += json['symbol'];
                 htmlData += '</td>';
                 htmlData += '<td>';
                 htmlData += json['last'];

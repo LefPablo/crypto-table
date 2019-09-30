@@ -20,7 +20,7 @@ function selectUp() {
             htmlData = '';
             a.forEach(function (json) { //creat list of cryptocurrency symbols
                 htmlData += '<option>';
-                htmlData += json['_id'];
+                htmlData += json['symbol'];
                 htmlData += '</option>';
             });
             document.getElementById("selectSymbol").innerHTML = htmlData;

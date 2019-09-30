@@ -1,6 +1,31 @@
 const ObjectID = require('mongodb').ObjectID;
 const db = require('../db');
 
+exports.table = function (cb) {
+    db.get().collection('symbols').find().toArray(function (err, docs) {
+        var a = [];
+        a = docs;
+        createTable(a);
+    });
+
+    var table = [];
+    function createTable(a) {
+        a.forEach( function(symbol)  {
+            db.get().collection('rates').find({symbol: symbol['symbol']}).sort({ $natural: -1 }).limit(1).toArray(function (err,doc) {
+                symbol['last'] = doc[0]['last'];
+                table.push(symbol);
+                if (a.length == table.length) {
+                    viewTable(err, table);
+                }
+            });
+        });
+    }
+
+    function viewTable(err, table) {
+        cb(err, table);
+    }
+};
+
 exports.rates = function (cb) {
     db.get().collection('rates').find().toArray(function (err, docs) {
         cb (err, docs);
